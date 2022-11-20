@@ -1,0 +1,19 @@
+:root {
+  --main-light-color: white;
+  --orange: rgb(234,75,31);
+  --blue: rgb(36,129,174);
+  --blue-hover: rgb(73, 165, 211);
+  --sand: rgb(231,179,127);
+  --dark-teal: rgb(18,44,52);
+  --green: rgb(65,97,46);
+  --light-sand: rgb(234, 214, 194);
+  --light-transparent-bg: rgba(255, 255, 255, 0.8);
+}
+
+body {
+  background-image: url("../pics/victor-hernandez-urbina-AzFzC0ltf0c-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+}/*# sourceMappingURL=index.css.map */

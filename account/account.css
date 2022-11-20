@@ -1,0 +1,68 @@
+:root {
+  --main-light-color: white;
+  --grey: rgb(240, 240, 240);
+  --orange: rgb(234,75,31);
+  --blue: rgb(36,129,174);
+  --blue-hover: rgb(73, 165, 211);
+  --sand: rgb(231,179,127);
+  --dark-teal: rgb(18,44,52);
+  --green: rgb(65,97,46);
+  --light-sand: rgb(234, 214, 194);
+  --light-transparent-bg: rgba(255, 255, 255, 0.8);
+}
+
+body {
+  background-image: url("../pics/spacejoy-9M66C_w_ToM-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.loginBox {
+  margin: 30px auto;
+  max-width: 500px;
+  padding: 20px;
+  height: 400px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--light-transparent-bg);
+}
+.loginBox .thank-you {
+  display: none;
+  margin-top: 150px;
+}
+.loginBox .loginForm, .loginBox .regForm {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 300px;
+  margin-top: 20px;
+  gap: 5px;
+}
+.loginBox .loginForm .input-control, .loginBox .regForm .input-control {
+  display: flex;
+  flex-direction: column;
+}
+.loginBox .loginForm .input-control input, .loginBox .regForm .input-control input {
+  border: 2px solid var(--grey);
+  border-radius: 4px;
+  display: block;
+  padding: 10px;
+}
+.loginBox .loginForm .input-control input:focus, .loginBox .regForm .input-control input:focus {
+  outline: 0;
+}
+.loginBox .loginForm .input-control .error, .loginBox .regForm .input-control .error {
+  color: var(--orange);
+  font-size: 0.7rem;
+  height: 13px;
+}
+.loginBox .loginForm .input-control.success input, .loginBox .regForm .input-control.success input {
+  border-color: var(--green);
+}
+.loginBox .loginForm .input-control.error input, .loginBox .regForm .input-control.error input {
+  border-color: var(--orange);
+}/*# sourceMappingURL=account.css.map */
