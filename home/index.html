@@ -5,9 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- STYLES -->
     <link rel="stylesheet" href="../globalstyles.css">
     <link rel="stylesheet" href="./index.css">
+
+    <!-- MAIN JS -->
     <script defer src="./index.js"></script>
+
+    <!-- FONTS, ICONS -->
     <script src="https://kit.fontawesome.com/0eb9458fd3.js"
         crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +21,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,400;1,200&display=swap"
         rel="stylesheet">
+
+    <!-- FLATPICKER -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://npmcdn.com/flatpickr/dist/themes/confetti.css">
+
     <title>Home</title>
 </head>
 
@@ -42,7 +55,10 @@
         </div>
         <main>
             <div class="content-wrapper">
-
+                <form action="
+                " class="dateSelection">
+                    <input type="date" id="dateSelect">
+                </form>
             </div>
         </main>
         <footer>
@@ -68,6 +84,8 @@
             </div>
         </footer>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </body>
 
 </html>

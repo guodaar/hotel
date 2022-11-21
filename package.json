@@ -1,0 +1,22 @@
+{
+  "name": "hotelindex",
+  "version": "1.0.0",
+  "description": "hotel website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guodaar/hotel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guodaar/hotel/issues"
+  },
+  "homepage": "https://github.com/guodaar/hotel#readme",
+  "dependencies": {
+    "flatpickr": "^4.6.13"
+  }
+}
