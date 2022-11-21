@@ -42,22 +42,25 @@
         </div>
         <main>
             <div class="loginBox">
-                <div class="loginButtons">
-                    <button id="loginBtn">Login</button>
-                    <button id="registerBtn">Register</button>
-                </div>
                 <p class="thank-you">Thank you for your registration!</p>
-                <form id="loginForm" class="loginForm">
+                <form action="../userpanel/userpage.html" id="loginForm"
+                    class="loginForm">
                     <div class="input-control">
                         <label for="loginName">User name: </label>
                         <input type="text" name="loginName" id="loginName"
                             required>
+                        <div class="error"></div>
                     </div>
                     <div class="input-control">
                         <label for="pass">Password: </label>
                         <input type="pass" name="pass" id="pass" required>
+                        <div class="error"></div>
                     </div>
                     <button class="btn" type="submit" id="login">Log In</button>
+                    <a href="" class="register-here">Don't have an account?
+                        Click
+                        here to
+                        register.</a>
                 </form>
                 <form action="" id="regForm" class="regForm">
                     <div class="input-control">
@@ -89,6 +92,7 @@
 
                     <button class="btn" type="submit"
                         id="confirmRegistration">Register</button>
+                    <a href="" class="back-to-login">Go back</a>
                 </form>
             </div>
 

@@ -1,36 +1,28 @@
 // const adminInput = document.querySelector("#adminInput");
 // const submitBtn = document.querySelector("#submitBtn");
 
-const loginBtn = document.querySelector("#loginBtn");
 const loginForm = document.querySelector("#loginForm");
-
-const registerBtn = document.querySelector("#registerBtn");
 const regForm = document.querySelector("#regForm");
+const registerHere = document.querySelector(".register-here");
+const backToLogin = document.querySelector(".back-to-login");
 
 const username = document.querySelector("#username");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const password2 = document.querySelector("#password2");
 
-////TOGGLE LOGIN FORM////
-loginBtn.addEventListener("click", (ev) => {
-  ev.preventDefault();
-  if (loginForm.style.display === "none") {
-    loginForm.style.display = "flex";
-    regForm.style.display = "none";
-  } else {
-    loginForm.style.display = "none";
-  }
+////TOGGLE REGISTRATION FORM////
+
+registerHere.addEventListener("click", (event) => {
+  event.preventDefault();
+  loginForm.style.display = "none";
+  regForm.style.display = "flex";
 });
 
-registerBtn.addEventListener("click", (ev) => {
-  ev.preventDefault();
-  if (regForm.style.display === "none") {
-    regForm.style.display = "flex";
-    loginForm.style.display = "none";
-  } else {
-    regForm.style.display = "none";
-  }
+backToLogin.addEventListener("click", (event) => {
+  event.preventDefault();
+  loginForm.style.display = "flex";
+  regForm.style.display = "none";
 });
 
 ////REGISTRATION FORM////
@@ -153,25 +145,14 @@ const validateInputs = () => {
   }
 };
 
-////LOGIN////
+////GET USER////
+
+const allUsers = [];
 
 async function getUserInfo() {
   try {
     const response = await fetch(
-      "https://testapi.io/api/guodaAr/resource/user",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username: username.value,
-          email: email.value,
-          password: password.value,
-          password2: password2.value,
-          isAdmin: false,
-        }),
-      }
+      "https://testapi.io/api/guodaAr/resource/user"
     );
     const data = await response.json();
     return data;
@@ -179,6 +160,22 @@ async function getUserInfo() {
     console.log(err);
   }
 }
+
+getUserInfo().then((user) => {
+  allUsers.push(...user.data);
+  allUsers.forEach((user) => {
+    getUser(user);
+  });
+  console.log(allUsers);
+});
+
+const getUser = ({ username, password }) => {
+  console.log(`${username}, ${password}`);
+};
+
+const [userN, passW] = allUsers;
+
+////LOGIN FORM////
 
 ////SET UP ADMIN////
 // async function registerAdmin() {

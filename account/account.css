@@ -35,12 +35,19 @@ body {
   margin-top: 150px;
 }
 .loginBox .loginForm, .loginBox .regForm {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   min-width: 300px;
-  margin-top: 20px;
-  gap: 5px;
+  margin-top: 30px;
+}
+.loginBox .loginForm .register-here, .loginBox .loginForm .back-to-login, .loginBox .regForm .register-here, .loginBox .regForm .back-to-login {
+  text-decoration: none;
+  color: var(--dark-teal);
+  margin-top: 10px;
+}
+.loginBox .loginForm .register-here:hover, .loginBox .loginForm .back-to-login:hover, .loginBox .regForm .register-here:hover, .loginBox .regForm .back-to-login:hover {
+  text-decoration: underline;
 }
 .loginBox .loginForm .input-control, .loginBox .regForm .input-control {
   display: flex;
@@ -65,4 +72,7 @@ body {
 }
 .loginBox .loginForm .input-control.error input, .loginBox .regForm .input-control.error input {
   border-color: var(--orange);
+}
+.loginBox .regForm {
+  display: none;
 }/*# sourceMappingURL=account.css.map */

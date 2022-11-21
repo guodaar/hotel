@@ -37,12 +37,21 @@ body {
 
 
     .loginForm, .regForm {
-        display: none;
+        display: flex;
         flex-direction: column;
         justify-content: center;
         min-width: 300px;
-        margin-top: 20px;
-        gap: 5px;
+        margin-top: 30px;
+
+            .register-here, .back-to-login {
+                text-decoration: none;
+                color: var(--dark-teal);
+                margin-top: 10px;
+            }
+
+            .register-here:hover, .back-to-login:hover {
+                text-decoration: underline;
+            }
 
             .input-control {
                 display: flex;
@@ -79,6 +88,10 @@ body {
                 }
             }
         }
+
+    .regForm {
+        display: none;
+    }
 
 }
 
