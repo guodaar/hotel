@@ -1,0 +1,78 @@
+:root {
+  --main-light-color: white;
+  --grey: rgb(240, 240, 240);
+  --orange: rgb(234,75,31);
+  --blue: rgb(36,129,174);
+  --blue-hover: rgb(73, 165, 211);
+  --sand: rgb(231,179,127);
+  --dark-teal: rgb(18,44,52);
+  --green: rgb(104, 150, 77);
+  --light-sand: rgb(234, 214, 194);
+  --light-transparent-bg: rgba(255, 255, 255, 0.7);
+}
+
+body {
+  background-image: url("../pics/mathilde-langevin-D7A9Wn8v9iY-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+main {
+  margin: 30px 100px;
+  border-radius: 5px;
+  background-color: var(--light-transparent-bg);
+  padding: 20px;
+}
+main .admin-controls {
+  padding: 20px 0 20px;
+  margin-top: 10px;
+  text-align: center;
+}
+main .form-container {
+  display: none;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+}
+main .form-container .admin-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main .form-container .admin-inputs input, main .form-container .admin-inputs textarea {
+  border: 2px solid var(--grey);
+  border-radius: 5px;
+  margin-top: 3px;
+  padding: 10px;
+}
+main .form-container .admin-inputs textarea {
+  resize: none;
+}
+main .form-container .admin-inputs input:focus, main .form-container .admin-inputs textarea:focus {
+  outline: 0;
+}
+main .form-container .admin-inputs .size-and-rate, main .form-container .admin-inputs .name-and-count, main .form-container .admin-inputs .bed-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+main .form-container .admin-inputs .bed-configuration {
+  border: 2px solid var(--main-light-color);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+main .form-container .admin-inputs .room-name, main .form-container .admin-inputs .room-count, main .form-container .admin-inputs .room-photo, main .form-container .admin-inputs .single-beds, main .form-container .admin-inputs .double-beds, main .form-container .admin-inputs .size, main .form-container .admin-inputs .rate, main .form-container .admin-inputs .description, main .form-container .admin-inputs .amenities {
+  display: flex;
+  flex-direction: column;
+}
+main .form-container #clear-fields {
+  margin-top: 15px;
+}
+main .room-list {
+  display: none;
+}/*# sourceMappingURL=admin.css.map */

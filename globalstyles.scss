@@ -21,6 +21,13 @@ body {
     color: var(--dark-teal);
 }
 
+h2 {
+    font-size: 1.9rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
 button {
     font-family: "Raleway", sans-serif;
     background-color: var(--blue);
@@ -58,7 +65,6 @@ flex: 1;
 }
 
 .head-wrapper {
-    // background-color: var(--blue);
     height: 50px;
     display: flex;
     justify-content: space-between;
@@ -92,11 +98,25 @@ flex: 1;
         }
 
         .account {
-            a::before {
+            display: flex;
+            gap: 10px;
+
+            #to-userpage::before {
                 font-family: 'FontAwesome';
                 content: '\f007';
                 padding-right: 7px;
                 font-size: 1.1rem;
+            }
+
+            #log-out {
+                display: none;
+            }
+
+            #log-out::before {
+                font-family: 'FontAwesome';
+                content: '\f2f5';
+                padding-right: 7px;
+                font-size: 1.1rem; 
             }
         }
     }

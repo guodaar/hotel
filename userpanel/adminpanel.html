@@ -5,9 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS STYLES -->
     <link rel="stylesheet" href="../globalstyles.css">
-    <link rel="stylesheet" href="../account/account.css">
-    <script defer src="./account.js"></script>
+    <link rel="stylesheet" href="./admin.css">
+
+    <!-- JS -->
+    <script defer src="../userauth.js"></script>
+    <script defer src="./admin.js"></script>
+
+    <!-- FONTS, ICONS -->
     <script src="https://kit.fontawesome.com/0eb9458fd3.js"
         crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,12 +43,87 @@
                     <a href="../rates/rates.html" id="book-now">Book Now</a>
                 </div>
                 <div class="account">
-                    <a href="../account/account.html">Account</a>
+                    <a id="to-userpage"
+                        href="../account/account.html">Account</a>
+                    <a id="log-out" href="">Log Out</a>
                 </div>
             </nav>
         </div>
         <main>
+            <h2>Admin Dashboard</h2>
+            <div class="admin-controls">
+                <button id="add-rooms-btn">Add a Room</button>
+                <button id="mng-rooms-btn">Manage Rooms</button>
+            </div>
+            <div class="form-container">
+                <form class="admin-inputs">
+                    <div class="name-and-count">
+                        <div class="room-name">
+                            <label for="room-name">Room name: </label>
+                            <input type="text" id="room-name" name="room-name"
+                                required>
+                        </div>
+                        <div class="room-count">
+                            <label for="room-count">Total available: </label>
+                            <input type="text" id="room-count" name="room-count"
+                                onkeypress="return onlyNumberKey(event)"
+                                required>
 
+                        </div>
+                    </div>
+                    <div class="room-photo">
+                        <label for="room-photo">Photo URL: </label>
+                        <input type="text" id="room-photo" name="room-photo"
+                            required>
+                    </div>
+                    <div class="size-and-rate">
+                        <div class="size">
+                            <label for="size">Size: </label>
+                            <input type="text" id="size" name="size"
+                                class="size" required>
+                        </div>
+                        <div class="rate">
+                            <label for="nightly-rate">Nightly rate: </label>
+                            <input type="text" id="nightly-rate"
+                                name="nightly-rate"
+                                onkeypress="return onlyNumberKey(event)"
+                                required>
+                        </div>
+                    </div>
+                    <div class="bed-configuration">
+                        <h3>Bed configuration</h3>
+                        <div class="bed-inputs">
+                            <div class="single-beds">
+                                <label for="single-beds">Single beds:</label>
+                                <input type="number" id="single-beds"
+                                    name="single-beds" min="0" required>
+                            </div>
+                            <div class="double-beds">
+                                <label for="double-beds">Double beds:</label>
+                                <input type="number" id="double-beds"
+                                    name="double-beds" min="0" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="description">
+                        <label for="description">Description: </label>
+                        <textarea id="description" name="description" rows="4"
+                            required></textarea>
+                    </div>
+                    <div class="amenities">
+                        <label for="amenities">Amenities: </label>
+                        <textarea id="amenities" name="amenities" rows="4"
+                            required></textarea>
+                    </div>
+                    <button type="submit" id="submit-btn">Save room</button>
+                </form>
+                <button id="clear-fields">Clear all fields</button>
+            </div>
+
+            <div class="room-list">
+                <p>Rooms go here</p>
+            </div>
         </main>
         <footer>
             <div class="address">

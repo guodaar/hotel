@@ -11,6 +11,11 @@ const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const password2 = document.querySelector("#password2");
 
+const thankYou = document.querySelector(".thank-you");
+
+const loginName = document.querySelector("#loginName");
+const pass = document.querySelector("#pass");
+
 ////TOGGLE REGISTRATION FORM////
 
 registerHere.addEventListener("click", (event) => {
@@ -36,8 +41,8 @@ regForm.addEventListener("submit", (event) => {
       console.log(user);
     });
     regForm.style.display = "none";
-    const thankYou = document.querySelector(".thank-you");
     thankYou.style.display = "block";
+    thankYou.textContent = "Registration complete, you can now log in!";
     setTimeout(() => {
       window.location.reload();
     }, 1000);
@@ -146,7 +151,6 @@ const validateInputs = () => {
 };
 
 ////GET USER////
-
 const allUsers = [];
 
 async function getUserInfo() {
@@ -164,18 +168,70 @@ async function getUserInfo() {
 getUserInfo().then((user) => {
   allUsers.push(...user.data);
   allUsers.forEach((user) => {
-    getUser(user);
+    user;
+    // getUser(user);
   });
   console.log(allUsers);
 });
 
-const getUser = ({ username, password }) => {
-  console.log(`${username}, ${password}`);
-};
+// const getUser = ({ username, password }) => {
+//   console.log(`${username}, ${password}`);
+// };
 
-const [userN, passW] = allUsers;
+// const [savedUserName, savedPassword] = allUsers;
 
 ////LOGIN FORM////
+
+function validateLogin() {
+  for (var i = 0; i < allUsers.length; i++) {
+    if (
+      loginName.value == allUsers[i].username &&
+      pass.value == allUsers[i].password
+    ) {
+      console.log(loginName + " is logged in!!!");
+      saveToStorage(allUsers[i]);
+      return;
+    } else if (
+      loginName.value == allUsers[i].username &&
+      pass.value !== allUsers[i].password
+    ) {
+      console.log("Password incorrect!");
+      setError(pass, "Password incorrect");
+      setSuccess(loginName, "");
+      return;
+    }
+  }
+  setError(pass, "Incorrect username or password");
+  setError(loginName, "");
+  console.log("incorrect username or password");
+}
+
+const saveToStorage = ({ username, isAdmin }) => {
+  sessionStorage.setItem(
+    `currentlyLoggedIn`,
+    JSON.stringify({ username, isAdmin })
+  );
+  console.log(username, isAdmin);
+  loginForm.style.display = "none";
+  thankYou.style.display = "block";
+  thankYou.textContent = "Log in successful!";
+  setTimeout(() => {
+    pageRedirect(isAdmin);
+  }, 1000);
+};
+
+function pageRedirect(isAdmin) {
+  if (isAdmin) {
+    window.location.href = "/userpanel/adminpanel.html";
+  } else {
+    window.location.href = "/userpanel/userpage.html";
+  }
+}
+
+loginForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  validateLogin();
+});
 
 ////SET UP ADMIN////
 // async function registerAdmin() {

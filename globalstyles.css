@@ -21,6 +21,13 @@ body {
   color: var(--dark-teal);
 }
 
+h2 {
+  font-size: 1.9rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
 button {
   font-family: "Raleway", sans-serif;
   background-color: var(--blue);
@@ -86,9 +93,22 @@ main {
   gap: 50px;
   align-items: baseline;
 }
-.head-wrapper nav .account a::before {
+.head-wrapper nav .account {
+  display: flex;
+  gap: 10px;
+}
+.head-wrapper nav .account #to-userpage::before {
   font-family: "FontAwesome";
   content: "\f007";
+  padding-right: 7px;
+  font-size: 1.1rem;
+}
+.head-wrapper nav .account #log-out {
+  display: none;
+}
+.head-wrapper nav .account #log-out::before {
+  font-family: "FontAwesome";
+  content: "\f2f5";
   padding-right: 7px;
   font-size: 1.1rem;
 }
