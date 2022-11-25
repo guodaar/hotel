@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- STYLES -->
+    <!-- CSS STYLES -->
     <link rel="stylesheet" href="../globalstyles.css">
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./rates.css">
 
-    <!-- MAIN JS -->
-    <script defer src="../flatpickr.js"></script>
+    <!-- JS -->
     <script defer src="../userauth.js"></script>
+    <!-- <script defer src="../flatpickr.js"></script>
+    <script defer src="./roomsrates.js"></script> -->
+
 
     <!-- FONTS, ICONS -->
     <script src="https://kit.fontawesome.com/0eb9458fd3.js"
@@ -29,7 +31,7 @@
     <link rel="stylesheet" type="text/css"
         href="https://npmcdn.com/flatpickr/dist/themes/confetti.css">
 
-    <title>Home</title>
+    <title>Confirm booking</title>
 </head>
 
 <body>
@@ -58,11 +60,8 @@
         </div>
         <main>
             <div class="content-wrapper">
-                <form action="
-                " class="dateSelection">
-                    <input type="date" id="dateSelect">
-                    <input type="submit" id="submit">
-                </form>
+
+                <div class="room-list"></div>
             </div>
         </main>
         <footer>
@@ -88,7 +87,6 @@
             </div>
         </footer>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </body>
 

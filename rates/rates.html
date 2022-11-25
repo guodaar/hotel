@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="./rates.css">
 
     <!-- JS -->
-    <!-- <script defer src="./account.js"></script> -->
     <script defer src="../userauth.js"></script>
+    <script defer src="../flatpickr.js"></script>
+    <script defer src="./roomsrates.js"></script>
+
 
     <!-- FONTS, ICONS -->
     <script src="https://kit.fontawesome.com/0eb9458fd3.js"
@@ -22,7 +24,14 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,400;1,200&display=swap"
         rel="stylesheet">
-    <title>Account</title>
+
+    <!-- FLATPICKER -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://npmcdn.com/flatpickr/dist/themes/confetti.css">
+
+    <title>Rates</title>
 </head>
 
 <body>
@@ -50,7 +59,15 @@
             </nav>
         </div>
         <main>
-            <p>vwsdv</p>
+            <div class="content-wrapper">
+                <div class="selection-bar">
+                    <form action="
+                    " class="dateSelection">
+                        <input type="date" id="dateSelect">
+                    </form>
+                </div>
+                <div class="room-list"></div>
+            </div>
         </main>
         <footer>
             <div class="address">
@@ -75,6 +92,7 @@
             </div>
         </footer>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </body>
 
 </html>

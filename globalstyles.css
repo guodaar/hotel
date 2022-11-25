@@ -7,7 +7,7 @@
   --dark-teal: rgb(18,44,52);
   --green: rgb(65,97,46);
   --light-sand: rgb(234, 214, 194);
-  --light-transparent-bg: rgba(255, 255, 255, 0.8);
+  --light-transparent-bg: rgba(255, 255, 255, 0.5);
 }
 
 body, p, h1, h2, h3, button, ul, li, a {
@@ -23,8 +23,13 @@ body {
 
 h2 {
   font-size: 1.9rem;
-  text-align: center;
   text-transform: uppercase;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 1.6rem;
+  text-transform: capitalize;
   font-weight: 400;
 }
 
@@ -36,6 +41,7 @@ button {
   padding: 10px 15px;
   color: var(--main-light-color);
   transition: 0.3s;
+  cursor: pointer;
 }
 
 button:hover {
@@ -69,6 +75,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
   padding: 20px 30px;
 }
 .head-wrapper .logo {
@@ -111,6 +118,67 @@ main {
   content: "\f2f5";
   padding-right: 7px;
   font-size: 1.1rem;
+}
+
+.room-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.room-list .room {
+  display: flex;
+  background-color: var(--light-transparent-bg);
+  border-radius: 5px;
+  min-height: 250px;
+  max-width: 700px;
+  padding: 10px;
+  gap: 20px;
+}
+.room-list .room .room-photo-box {
+  display: flex;
+  flex: 2;
+}
+.room-list .room .room-photo-box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.room-list .room .room-info-box {
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+  gap: 10px;
+}
+.room-list .room .room-info-box p {
+  text-align: justify;
+}
+.room-list .room .room-side-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  padding: 10px;
+}
+.room-list .room .room-side-box span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.dateSelection input {
+  border: 2px solid var(--grey);
+  border-radius: 4px;
+  display: block;
+  padding: 10px;
+}
+.dateSelection input:focus {
+  outline: 0;
 }
 
 footer {

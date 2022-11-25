@@ -1,10 +1,10 @@
+///MAIN BUTTONS///
 const addRoomsToggle = document.querySelector("#add-rooms-btn");
 const mngRoomsToggle = document.querySelector("#mng-rooms-btn");
 
+///FORM///
 const form = document.querySelector(".admin-inputs");
 const formContainer = document.querySelector(".form-container");
-const roomList = document.querySelector(".room-list");
-
 const roomName = document.querySelector("#room-name");
 const roomCount = document.querySelector("#room-count");
 const photoURL = document.querySelector("#room-photo");
@@ -14,8 +14,10 @@ const singleBeds = document.querySelector("#single-beds");
 const doubleBeds = document.querySelector("#double-beds");
 const description = document.querySelector("#description");
 const amenities = document.querySelector("#amenities");
-
 const clearFields = document.querySelector("#clear-fields");
+
+///ROOM LIST///
+const roomList = document.querySelector(".room-list");
 
 ////TOGGLE BUTTONS////
 addRoomsToggle.addEventListener("click", () => {
@@ -49,7 +51,11 @@ form.addEventListener("submit", (event) => {
   saveRoom().then((room) => {
     console.log(room);
   });
+  form.reset();
+  alert("Room added!");
 });
+
+const roomCode = Math.floor(Math.random() * 1000) + 1;
 
 async function saveRoom() {
   try {
@@ -70,6 +76,7 @@ async function saveRoom() {
           doubleBeds: doubleBeds.value,
           description: description.value,
           amenities: amenities.value,
+          roomCode: roomCode,
         }),
       }
     );
@@ -80,10 +87,9 @@ async function saveRoom() {
   }
 }
 
+///CLEAR FIELDS///
 clearFields.addEventListener("click", () => {
   if (confirm(`This will clear all inputs. Proceed?`)) {
     form.reset();
   }
 });
-
-////DISPLAY ADDED ROOMS////

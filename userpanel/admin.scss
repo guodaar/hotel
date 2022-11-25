@@ -8,7 +8,7 @@
     --dark-teal: rgb(18,44,52);
     --green: rgb(104, 150, 77);
     --light-sand: rgb(234, 214, 194);
-    --light-transparent-bg: rgba(255, 255, 255, 0.7);
+    --light-transparent-bg: rgba(255, 255, 255, 0.5);
 }
 
 body {
@@ -20,10 +20,16 @@ body {
 }
 
 main {
-    margin: 30px 100px;
+    margin: 50px 10vw;
     border-radius: 5px;
-    background-color: var(--light-transparent-bg);
-    padding: 20px;
+    padding: 20px 20px 60px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(10px);
+
+    h2 {
+        text-align: center;
+    }
 
     .admin-controls {
         padding: 20px 0 20px;
@@ -36,6 +42,9 @@ main {
         flex-direction: column;
         max-width: 500px;
         margin: 0 auto;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: var(--light-transparent-bg);
 
         .admin-inputs {
             display: flex;
@@ -43,10 +52,11 @@ main {
             gap: 10px;
     
             input, textarea {
-                border: 2px solid var(--grey);
+                border: none;
                 border-radius: 5px;
                 margin-top: 3px;
                 padding: 10px;
+                background-color: var(--light-transparent-bg);
             }
     
             textarea {
@@ -64,7 +74,7 @@ main {
             }
     
             .bed-configuration {
-                border: 2px solid var(--main-light-color);
+                border: 1px solid var(--main-light-color);
                 border-radius: 5px;
                 padding: 10px;
                 display: flex;

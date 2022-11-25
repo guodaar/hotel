@@ -16,14 +16,4 @@ body {
   background-size: cover;
   background-position: top;
   background-attachment: fixed;
-}
-
-.dateSelection input {
-  border: 2px solid var(--grey);
-  border-radius: 4px;
-  display: block;
-  padding: 10px;
-}
-.dateSelection input:focus {
-  outline: 0;
 }/*# sourceMappingURL=index.css.map */
