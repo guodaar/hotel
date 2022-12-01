@@ -1,4 +1,10 @@
 const roomContainer = document.querySelector(".room-list");
+const form = document.querySelector(".dateSelection");
+let bookingBtn = document.querySelector(".book-now-btn");
+let dateRange;
+// let userBookingInfo = JSON.parse(localStorage.getItem("userSelection")) || [];
+let userBookingInfo = [];
+const currentUser = JSON.parse(sessionStorage.getItem("currentlyLoggedIn"));
 
 ///GET ROOM INFO///
 const allRooms = [];
@@ -33,33 +39,37 @@ function drawRoom(room, target, index) {
   photoContainer.setAttribute("class", "room-photo-box");
   infoContainer.setAttribute("class", "room-info-box");
   sideContainer.setAttribute("class", "room-side-box");
-  let photo = document.createElement("img");
   let name = document.createElement("h3");
-  let description = document.createElement("p");
+  let photo = document.createElement("img");
   let size = document.createElement("p");
-  let beds = document.createElement("p");
-  let amenities = document.createElement("p");
-
+  let occupancy = document.createElement("p");
   let rate = document.createElement("p");
+  let description = document.createElement("p");
+  let amenities = document.createElement("p");
   let bookNow = document.createElement("button");
 
-  photo.src = `${room.photoURL}`;
+  size.setAttribute("class", "size-value");
+  amenities.setAttribute("class", "amenities-value");
+  rate.setAttribute("class", "rate-value");
+  occupancy.setAttribute("class", "sleeps-value");
+  bookNow.setAttribute("class", "book-now-btn");
+
   name.textContent = `${room.roomName}`;
+  photo.src = `${room.photoURL}`;
+  occupancy.textContent = `${room.occupancy}`;
+  size.textContent = `${room.size}`;
+  rate.textContent = `${room.nightlyRate}`;
   description.textContent = `${room.description}`;
-  size.innerHTML = `<p><strong>Size:</strong> ${room.size} sq ft</p>`;
-  amenities.innerHTML = `<p><strong>Amenities:</strong> ${room.amenities}</p>`;
-  rate.innerHTML = `<p><span>$${room.nightlyRate}</span>per night</p>`;
+  amenities.textContent = `${room.amenities}`;
   bookNow.textContent = "Book Now";
 
-  if (room.singleBeds === "0") {
-    beds.innerHTML = `<p><i class="fa-solid fa-bed"></i>${room.doubleBeds} double`;
-  } else if (room.doubleBeds === "0") {
-    beds.innerHTML = `<p><i class="fa-solid fa-bed"></i>${room.singleBeds} single`;
-  } else {
-    beds.innerHTML = `<p><i class="fa-solid fa-bed"></i>${room.singleBeds} single, ${room.doubleBeds} double`;
-  }
-
   bookNow.addEventListener("click", () => {
+    let code = { roomCode: room.roomCode };
+    let user = { username: currentUser.username };
+
+    userBookingInfo.push(code);
+    userBookingInfo.push(user);
+    addItem(code);
     window.location.href = "/rates/bookingpage.html";
   });
 
@@ -67,7 +77,7 @@ function drawRoom(room, target, index) {
   infoContainer.appendChild(name);
   infoContainer.appendChild(description);
   infoContainer.appendChild(size);
-  infoContainer.appendChild(beds);
+  infoContainer.appendChild(occupancy);
   infoContainer.appendChild(amenities);
   sideContainer.appendChild(rate);
   sideContainer.appendChild(bookNow);
@@ -77,6 +87,7 @@ function drawRoom(room, target, index) {
   target.appendChild(container);
 }
 
+////DRAW ALL ROOMS////
 function drawAllRooms(arr) {
   roomContainer.innerHTML = null;
   arr.forEach((element, index) => {
@@ -86,3 +97,49 @@ function drawAllRooms(arr) {
 window.addEventListener("load", () => {
   drawAllRooms(allRooms);
 });
+
+////DATE SELECTION////
+flatpickr("#dateSelect", {
+  mode: "range",
+  dateFormat: "Y-m-d",
+  minDate: "today",
+  onClose: function (selectedDates, dateStr, instance) {
+    let daysInRange = document.getElementsByClassName("inRange");
+    let nightsLengthTotal = daysInRange.length + 1;
+    dateRange = nightsLengthTotal;
+  },
+});
+
+const fp = document.querySelector("#dateSelect")._flatpickr;
+
+////GUEST SELECTIONS////
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let selectedDate = { date: document.querySelector("#dateSelect").value };
+  let selectedAdults = { adults: document.querySelector("#adults").value };
+  let selectedKids = { kids: document.querySelector("#children").value };
+  let selectedRange = { nights: dateRange };
+  let totalGuests = Number(selectedAdults.adults) + Number(selectedKids.kids);
+
+  filterRooms(allRooms, totalGuests);
+  userBookingInfo = [];
+  userBookingInfo.push(selectedDate);
+  userBookingInfo.push(selectedAdults);
+  userBookingInfo.push(selectedKids);
+  userBookingInfo.push(selectedRange);
+});
+
+function addItem() {
+  sessionStorage.setItem("userSelection", JSON.stringify(userBookingInfo));
+  let results = JSON.parse(sessionStorage.getItem("userSelection"));
+}
+
+////FILTER ROOMS BY OCCUPANCY////
+function filterRooms(arr, keyword) {
+  const searchResults = arr.filter(function (room) {
+    if (Number(room.occupancy) >= keyword) {
+      return room;
+    }
+  });
+  drawAllRooms(searchResults);
+}

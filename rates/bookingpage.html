@@ -8,12 +8,11 @@
 
     <!-- CSS STYLES -->
     <link rel="stylesheet" href="../globalstyles.css">
-    <link rel="stylesheet" href="./rates.css">
+    <link rel="stylesheet" href="./bookingpage.css">
 
     <!-- JS -->
     <script defer src="../userauth.js"></script>
-    <!-- <script defer src="../flatpickr.js"></script>
-    <script defer src="./roomsrates.js"></script> -->
+    <script defer src="./bookingpage.js"></script>
 
 
     <!-- FONTS, ICONS -->
@@ -25,49 +24,90 @@
         href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,400;1,200&display=swap"
         rel="stylesheet">
 
-    <!-- FLATPICKER -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://npmcdn.com/flatpickr/dist/themes/confetti.css">
-
     <title>Confirm booking</title>
 </head>
 
 <body>
     <div class="main-container">
-        <div class="head-wrapper">
-            <header>
+        <header>
+            <nav class="navbar">
                 <a href="../home/index.html">
                     <img class="logo" src="../pics/logo/logo-no-background.png"
                         alt="">
                 </a>
-            </header>
-            <nav>
-                <div class="menu">
-                    <a href="../home/index.html">Home</a>
-                    <a href="../about/about.html">About us</a>
-                    <a href="../rates/rates.html">Rates & Availability</a>
-                    <a href="../contact/contact.html">Contact Us</a>
-                    <a href="../rates/rates.html" id="book-now">Book Now</a>
+                <ul class="nav-menu">
+                    <li><a href="../home/index.html" class="nav-link">Home</a>
+                    </li>
+                    <li><a href="../about/about.html" class="nav-link">About
+                            us</a></li>
+                    <li><a href="../rates/rates.html" class="nav-link">Rates &
+                            Availability</a></li>
+                    <li>
+                        <button onclick="location.href = '../rates/rates.html';"
+                            id="book-now" class="nav-link">Book
+                            Now</button>
+                    </li>
+                    <li class="account">
+                        <a id="to-userpage" href="../account/account.html"
+                            class="nav-link">Account</a>
+                    </li>
+                    <li class="account">
+                        <a id="log-out" href="" class="nav-link">Log Out</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </div>
-                <div class="account">
-                    <a id="to-userpage"
-                        href="../account/account.html">Account</a>
-                    <a id="log-out" href="">Log Out</a>
-                </div>
-            </nav>
-        </div>
-        <main>
-            <div class="content-wrapper">
 
-                <div class="room-list"></div>
-            </div>
+            </nav>
+        </header>
+        <main>
+            <form class="booking-details">
+                <div class="form-wrapper">
+                    <h2>next step: personal details</h2>
+                    <p>Please, fill in your personal details below, making sure
+                        that you enter them correctly <i
+                            class="fa-solid fa-pen"></i></p>
+                    <div class="name-wrapper">
+                        <div class="first-name input-wrap">
+                            <label for="first-name">First name: </label>
+                            <input type="text" id="first-name" name="first-name"
+                                required>
+                        </div>
+                        <div class="last-name input-wrap">
+                            <label for="last-name">Last name: </label>
+                            <input type="text" id="last-name" name="last-name"
+                                required>
+                        </div>
+                        <div class="phone-number input-wrap">
+                            <label for="phone-number">Phone number: </label>
+                            <input type="tel" id="phone-number"
+                                name="phone-number" required>
+                        </div>
+                    </div>
+                    <div class="special-request input-wrap">
+                        <label for="special-request">Special requests:
+                        </label>
+                        <textarea id="special-request" name="special-request"
+                            rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="booking-info">
+                    <h3>Booking overview:</h3>
+                    <div class="button-wrapper">
+                        <button type="submit" id="submit-btn">Confirm
+                            booking</button>
+                    </div>
+                </div>
+
+            </form>
         </main>
         <footer>
             <div class="address">
                 <p>22300 Pacific Coast Hwy, Malibu, CA 90303</p>
-                <p class="phone-number">1 800-000-0000</p>
+                <p class="phone-number"><span>Call us: </span>1 800-000-0000</p>
             </div>
             <div class="links">
                 <div class="socials">
@@ -78,8 +118,9 @@
                     <a href="https://www.instagram.com/"><i
                             class="fa-brands fa-instagram"></i></a>
                 </div>
-                <a href="../rates/rates.html" id="book-now">Book
-                    Now</a>
+                <button onclick="location.href = '../rates/rates.html';"
+                    id="book-now">Book
+                    Now</button>
             </div>
             <div class="copyright">
                 <p>© 2022 by The Sandstone Hotel.</p>
@@ -87,7 +128,6 @@
             </div>
         </footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </body>
 
 </html>

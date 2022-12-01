@@ -1,0 +1,124 @@
+:root {
+  --main-light-color: white;
+  --orange: rgb(234,75,31);
+  --blue: rgb(36,129,174);
+  --blue-hover: rgb(73, 165, 211);
+  --sand: rgb(231,179,127);
+  --dark-teal: rgb(18,44,52);
+  --green: rgb(69, 138, 74);
+  --light-sand: rgb(234, 214, 194);
+  --light-transparent-bg: rgba(255, 255, 255, 0.5);
+}
+
+body {
+  background: url("../pics/tom-briskey-WN4OusOZn9A-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+}
+
+.booking-details {
+  display: flex;
+  gap: 50px;
+}
+@media (max-width: 649px) {
+  .booking-details {
+    flex-direction: column;
+  }
+}
+@media (min-width: 650px) and (max-width: 992px) {
+  .booking-details {
+    flex-direction: column;
+  }
+}
+.booking-details .form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 2;
+}
+@media (max-width: 649px) {
+  .booking-details .form-wrapper {
+    padding: 10px;
+  }
+}
+.booking-details .form-wrapper .name-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.booking-details .form-wrapper .input-wrap {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.booking-details .form-wrapper input, .booking-details .form-wrapper textarea {
+  border: none;
+  border-radius: 5px;
+  margin-top: 3px;
+  padding: 10px;
+  min-width: 0;
+  background-color: var(--light-transparent-bg);
+}
+.booking-details .form-wrapper textarea {
+  resize: none;
+}
+.booking-details .form-wrapper input:focus, .booking-details .form-wrapper textarea:focus {
+  outline: 0;
+}
+.booking-details .booking-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--light-transparent-bg);
+  border-radius: 5px;
+  padding: 20px 10px;
+}
+.booking-details .booking-info .room-photo-box {
+  display: flex;
+}
+.booking-details .booking-info .room-photo-box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.booking-details .booking-info .room-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.booking-details .booking-info .room-info-box .dates-value::before {
+  content: "Dates: ";
+  font-weight: 600;
+}
+.booking-details .booking-info .room-info-box .guests-value::before {
+  content: "Guests: ";
+  font-weight: 600;
+}
+.booking-details .booking-info .room-info-box .nights-value::before {
+  content: "Nights total: ";
+  font-weight: 600;
+}
+.booking-details .booking-info .pricing-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-top: 1px solid var(--dark-teal);
+  padding-top: 10px;
+}
+.booking-details .booking-info .pricing-box .rate-value {
+  font-size: 1.1rem;
+}
+.booking-details .booking-info .pricing-box .rate-value::before {
+  content: "Total price: ";
+  font-weight: 600;
+}
+.booking-details .booking-info .pricing-box button {
+  background-color: var(--green);
+}/*# sourceMappingURL=bookingpage.css.map */

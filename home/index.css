@@ -11,9 +11,58 @@
 }
 
 body {
-  background-image: url("../pics/victor-hernandez-urbina-AzFzC0ltf0c-unsplash.jpg");
+  background-image: url("../pics/tom-briskey-pEAiPigyWcQ-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top;
+  background-position: center;
   background-attachment: fixed;
+}
+
+main .content-wrapper {
+  display: flex;
+  background-color: var(--light-transparent-bg);
+  border-radius: 5px;
+}
+@media (max-width: 629px) {
+  main .content-wrapper {
+    border-radius: 0px;
+    flex-direction: column;
+  }
+}
+main .content-wrapper .about-hotel {
+  flex: 1;
+  padding: 50px 5vw;
+  display: flex;
+  flex-direction: column;
+}
+main .content-wrapper .about-hotel p {
+  font-style: italic;
+  font-size: 1.1rem;
+  text-align: justify;
+  padding-bottom: 20px;
+}
+main .content-wrapper .about-hotel #book-now {
+  border: none;
+  background-color: var(--sand);
+}
+main .content-wrapper .about-hotel #book-now:hover {
+  background-color: var(--light-transparent-bg);
+}
+main .content-wrapper .photo-container {
+  display: flex;
+  flex: 1.5;
+}
+main .content-wrapper .photo-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+@media (max-width: 629px) {
+  main .content-wrapper .photo-container img {
+    border-radius: 0px;
+  }
 }/*# sourceMappingURL=index.css.map */

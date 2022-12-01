@@ -9,13 +9,14 @@
     --green: rgb(104, 150, 77);
     --light-sand: rgb(234, 214, 194);
     --light-transparent-bg: rgba(255, 255, 255, 0.5);
+    --empty-bg: rgba(255, 255, 255, 0);
 }
 
 body {
     background-image: url('../pics/spacejoy-9M66C_w_ToM-unsplash.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-attachment: fixed;
 }
 
@@ -62,7 +63,7 @@ body {
 
                 input {
                     background-color: var(--light-transparent-bg);
-                    border: none;
+                    border: 2px solid var(--empty-bg);
                     border-radius: 5px;
                     display: block;
                     padding: 10px;
@@ -98,5 +99,7 @@ body {
     }
 
 }
+
+
 
     

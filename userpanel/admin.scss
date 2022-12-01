@@ -67,24 +67,26 @@ main {
             outline: 0;
             }
     
-            .size-and-rate, .name-and-count, .bed-inputs {
+            .grid-inputs {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
                 gap: 10px;
-            }
-    
-            .bed-configuration {
                 border: 1px solid var(--main-light-color);
                 border-radius: 5px;
                 padding: 10px;
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
             }
-    
-            .room-name, .room-count, .room-photo, .single-beds, .double-beds, .size, .rate, .description, .amenities {
+            
+            .room-name, .room-count, .room-photo, .sleeps, .size, .rate, .description, .amenities {
                 display: flex;
                 flex-direction: column;
+            }
+
+            @media screen and (max-width: 767px) {
+                .grid-inputs {
+                    display: flex;
+                    flex-direction: column;
+                }
             }
     
         }
@@ -98,3 +100,4 @@ main {
         display: none;
     }
 }
+

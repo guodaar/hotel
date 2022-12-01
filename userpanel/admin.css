@@ -63,22 +63,24 @@ main .form-container .admin-inputs textarea {
 main .form-container .admin-inputs input:focus, main .form-container .admin-inputs textarea:focus {
   outline: 0;
 }
-main .form-container .admin-inputs .size-and-rate, main .form-container .admin-inputs .name-and-count, main .form-container .admin-inputs .bed-inputs {
+main .form-container .admin-inputs .grid-inputs {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 10px;
-}
-main .form-container .admin-inputs .bed-configuration {
   border: 1px solid var(--main-light-color);
   border-radius: 5px;
   padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
 }
-main .form-container .admin-inputs .room-name, main .form-container .admin-inputs .room-count, main .form-container .admin-inputs .room-photo, main .form-container .admin-inputs .single-beds, main .form-container .admin-inputs .double-beds, main .form-container .admin-inputs .size, main .form-container .admin-inputs .rate, main .form-container .admin-inputs .description, main .form-container .admin-inputs .amenities {
+main .form-container .admin-inputs .room-name, main .form-container .admin-inputs .room-count, main .form-container .admin-inputs .room-photo, main .form-container .admin-inputs .sleeps, main .form-container .admin-inputs .size, main .form-container .admin-inputs .rate, main .form-container .admin-inputs .description, main .form-container .admin-inputs .amenities {
   display: flex;
   flex-direction: column;
+}
+@media screen and (max-width: 767px) {
+  main .form-container .admin-inputs .grid-inputs {
+    display: flex;
+    flex-direction: column;
+  }
 }
 main .form-container #clear-fields {
   margin-top: 15px;

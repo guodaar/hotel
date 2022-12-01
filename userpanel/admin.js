@@ -10,8 +10,7 @@ const roomCount = document.querySelector("#room-count");
 const photoURL = document.querySelector("#room-photo");
 const size = document.querySelector("#size");
 const rate = document.querySelector("#nightly-rate");
-const singleBeds = document.querySelector("#single-beds");
-const doubleBeds = document.querySelector("#double-beds");
+const occupancy = document.querySelector("#sleeps");
 const description = document.querySelector("#description");
 const amenities = document.querySelector("#amenities");
 const clearFields = document.querySelector("#clear-fields");
@@ -46,8 +45,7 @@ function onlyNumberKey(evt) {
 }
 
 /////SAVE ROOM INFO////
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+form.addEventListener("submit", () => {
   saveRoom().then((room) => {
     console.log(room);
   });
@@ -72,8 +70,7 @@ async function saveRoom() {
           photoURL: photoURL.value,
           size: size.value,
           nightlyRate: rate.value,
-          singleBeds: singleBeds.value,
-          doubleBeds: doubleBeds.value,
+          occupancy: occupancy.value,
           description: description.value,
           amenities: amenities.value,
           roomCode: roomCode,

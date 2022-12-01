@@ -14,22 +14,14 @@ body {
     background: url('../pics/tom-briskey-WN4OusOZn9A-unsplash.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-attachment: fixed;
 }
 
 main {
-    margin: 50px 10vw;
-    border-radius: 5px;
-    padding: 20px 20px 60px;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
-    background-color: rgba(255, 255, 255, .15);
-    backdrop-filter: blur(10px);
     
     .room-list {
-        i {
-            font-size: 1.6rem;
-            padding-right: 5px;
-        }
+        display: flex;
     }
+
 }
