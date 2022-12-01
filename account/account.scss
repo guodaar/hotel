@@ -48,13 +48,13 @@ body {
         gap: 3px;
 
             .register-here, .back-to-login {
-                text-decoration: none;
+                text-decoration: underline;
                 color: var(--main-light-color);
                 margin-top: 10px;
             }
 
             .register-here:hover, .back-to-login:hover {
-                text-decoration: underline;
+                text-decoration: none;
             }
 
             .input-control {

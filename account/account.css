@@ -47,12 +47,12 @@ body {
   gap: 3px;
 }
 .loginBox .loginForm .register-here, .loginBox .loginForm .back-to-login, .loginBox .regForm .register-here, .loginBox .regForm .back-to-login {
-  text-decoration: none;
+  text-decoration: underline;
   color: var(--main-light-color);
   margin-top: 10px;
 }
 .loginBox .loginForm .register-here:hover, .loginBox .loginForm .back-to-login:hover, .loginBox .regForm .register-here:hover, .loginBox .regForm .back-to-login:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 .loginBox .loginForm .input-control, .loginBox .regForm .input-control {
   display: flex;
